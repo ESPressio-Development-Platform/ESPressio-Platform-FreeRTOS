@@ -26,6 +26,8 @@ The provider deliberately preserves the native FreeRTOS counter width instead of
 
 No ESP-IDF FreeRTOS extensions are used.
 
-## Bus I/O and GPIO
+## Hardware-facing Platform capabilities
 
-`ESPressio-Platform` now defines I2C, SPI and GPIO contracts, but this backend intentionally provides none of them. FreeRTOS is a scheduler/kernel and does not itself define portable hardware-controller APIs for those facilities. Hardware/framework backends such as `ESPressio-Platform-Arduino`, `ESPressio-Platform-ESP-IDF`, or future MCU-specific providers satisfy those capabilities instead and may be composed alongside the FreeRTOS providers.
+`ESPressio-Platform` now defines I2C, SPI, GPIO, ByteStream and Entropy contracts, but this backend intentionally provides none of them. FreeRTOS is a scheduler/kernel and does not itself define portable hardware-controller, stream-device, or entropy-source APIs for these facilities.
+
+Hardware/framework backends such as `ESPressio-Platform-Arduino`, `ESPressio-Platform-ESP-IDF`, hardware-specific libraries, or future MCU-specific providers satisfy those capabilities instead and may be composed alongside the FreeRTOS providers. This is intentional evidence that Platform composition does not require every selected capability to come from one backend family.

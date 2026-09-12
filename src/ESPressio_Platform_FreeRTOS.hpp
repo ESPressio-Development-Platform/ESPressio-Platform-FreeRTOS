@@ -20,3 +20,5 @@ using ProviderDeclaration = ESPressio::Platform::ProviderDeclaration<
     TRequirements>;
 
 } // namespace ESPressio::Platform::FreeRTOS
+
+#include "ESPressio_Platform_FreeRTOSClock.hpp"
